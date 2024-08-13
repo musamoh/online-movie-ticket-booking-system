@@ -22,8 +22,9 @@ This project contains following apps:-
 
 # How to run this project
 Ensure you have docker installed on your system. If not, install it from [here](https://docs.docker.com/get-docker/)
+on the Terminal or Command Prompt, run the following commands:-
 1. run docker-compose up --build
 2. open browser and go to 0.0.0.0:8000/
 3. migrate the database using `docker-compose exec web python manage.py migrate`
 4. create superuser using `docker-compose exec web python manage.py createsuperuser` and follow the instructions to create superuser
- 
+5. use the superuser credentials to login to the admin panel at 0.0.0.0:8000/admin or 0.0.0.0:8000/login
