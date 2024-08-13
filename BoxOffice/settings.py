@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from pathlib import Path
 from django.conf.global_settings import LOGOUT_REDIRECT_URL
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +27,11 @@ SECRET_KEY = '3m!+zyot=0e8ch3%c!_rn-xt=#f-7pcr1apl0)&f$^h%^b34k4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '0.0.0.0',
+    '127.0.0.1'
+]
 
 AUTH_USER_MODEL = 'home.User'
 # Application definition
@@ -85,7 +90,7 @@ DATABASES = {
         'NAME': 'eclipse',
         'USER': 'root',
         'PASSWORD': 'vimal',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT':'3306',
     }
 }
@@ -124,10 +129,15 @@ USE_L10N = True
 USE_TZ = True
 
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),'/static/',]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),'/static/',]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')

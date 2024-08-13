@@ -1,7 +1,7 @@
 # online-movie-ticket-booking-system
 This is an online movie ticket booking website  made using following technologies:-
-  1. Python-3.6
-  2. Django-2.0.3
+  1. Python-3.11
+  2. Django-5.0.0
   3. JavaScript
   4. JQuery-3.3.1
   5. Bootstrap3
@@ -18,4 +18,12 @@ This project contains following apps:-
  Movie list view displays the movie.
  Theatre list view displays all the theatres in a city.
  Booking list view displays our booking.
+
+
+# How to run this project
+Ensure you have docker installed on your system. If not, install it from [here](https://docs.docker.com/get-docker/)
+1. run docker-compose up --build
+2. open browser and go to 0.0.0.0:8000/
+3. migrate the database using `docker-compose exec web python manage.py migrate`
+4. create superuser using `docker-compose exec web python manage.py createsuperuser` and follow the instructions to create superuser
  

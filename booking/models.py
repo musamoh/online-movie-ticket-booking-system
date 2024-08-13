@@ -14,7 +14,6 @@ class Booking(models.Model):
         ('Net Banking', 'Net Banking'),
         ('Wallet', 'Wallet'),
     )
-    id                =     models.CharField(primary_key=True, max_length=200)
     timestamp         =     models.DateTimeField('%Y-%m-%d %H:%M:%S')
     payment_type      =     models.CharField(max_length=11, choices=payment_choice)
     paid_amount       =     models.DecimalField(max_digits=8, decimal_places=2)
