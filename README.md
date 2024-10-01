@@ -28,3 +28,4 @@ on the Terminal or Command Prompt, run the following commands:-
 3. migrate the database using `docker-compose exec web python manage.py migrate`
 4. create superuser using `docker-compose exec web python manage.py createsuperuser` and follow the instructions to create superuser
 5. use the superuser credentials to login to the admin panel at 0.0.0.0:8000/admin or 0.0.0.0:8000/login
+6. copy data from the data.json file to the database using `docker exec -it online-movie-ticket-booking-system-web-1 python3 manage.py copy_data`
